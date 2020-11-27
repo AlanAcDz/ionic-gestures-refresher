@@ -1,0 +1,7 @@
+{
+  "name": "ionic-gestures-refresher",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
