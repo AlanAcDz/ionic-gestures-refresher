@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
-  constructor() {}
-
+  list = Array(15);
+  doRefresh(event) {
+    console.log({ refresh: event });
+    setTimeout(() => event.target.complete(), 500);
+  }
 }

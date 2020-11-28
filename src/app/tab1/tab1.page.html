@@ -1,17 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            Gestures & Refresher
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <section #content [appSwipeGesture]="content">
+        <ion-list>
+            <ion-list-header mode="ios">
+                <ion-label>Swipe left or right</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let item of list; let i = index">
+                <ion-label>Item {{ i }}</ion-label>
+            </ion-item>
+        </ion-list>
+    </section>
 </ion-content>
