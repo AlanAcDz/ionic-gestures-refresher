@@ -14,6 +14,7 @@ export class SwipeGestureDirective implements OnInit {
       el: this.htmlElement,
       gestureName: 'swipe',
       direction: 'x',
+      gesturePriority: 32,
       onStart: (detail) => console.log({ onStart: detail }),
       onMove: (detail) => this.onSwipe(detail),
       onEnd: () => this.onRelease(),
